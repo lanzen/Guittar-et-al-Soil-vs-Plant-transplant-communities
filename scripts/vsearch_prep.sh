@@ -27,7 +27,7 @@ for d in $*; do
     vsearch --fastq_filter ${i}_m --fastaout ${i}_merged_QF.fasta --fastq_maxee 1 --fastq_trunclen $crop_length 2>>../readprep.log    
     
     #Fix read names to include "barcode" label
-   python ~/script/drive5/fixreads.py ${i}_merged_QF.fasta $i > ../merged_reads/${i}_reads_fixed.fasta
+   python fixreads.py ${i}_merged_QF.fasta $i > ../merged_reads/${i}_reads_fixed.fasta
 
    rm ${i}_merged_QF.fasta
 
